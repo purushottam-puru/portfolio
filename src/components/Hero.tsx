@@ -15,8 +15,8 @@ export default function Hero() {
             Available for Strategic Roles
           </div>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-zinc-900 mb-8 leading-[0.9]">
-            Program Manager <br />
-            <span className="text-zinc-400">& Strategy Expert.</span>
+          Operations, Strategy <br />
+            <span className="text-zinc-400">& Growth Expert.</span>
           </h1>
           <p className="text-xl text-zinc-600 max-w-lg mb-10 leading-relaxed">
             IIM Bangalore MBA with experience across the EV ecosystem. Expert in strategy, operations, market expansion, and process optimization to drive growth and efficiency.

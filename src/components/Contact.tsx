@@ -82,7 +82,7 @@ export default function Contact() {
         
         <div className="mt-20 pt-10 border-t border-zinc-100 flex flex-col md:row items-center justify-between gap-6">
           <div className="text-zinc-400 text-sm font-medium">
-            © 2026 Purushottam Puru. All rights reserved.
+            © 2026 Purushottam. All rights reserved.
           </div>
           <div className="flex gap-8">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
