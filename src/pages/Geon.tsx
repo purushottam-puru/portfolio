@@ -4,95 +4,95 @@ import { Link } from "react-router-dom";
 
 const projects = [
   {
+    id: "gtm-strategy",
+    title: "GTM Strategy & Sales",
+    icon: TrendingUp,
+    description: "Created GTM strategy for 3W L3 channel sales & Inverter Battery segment.",
+    details: [
+      "Defined operations, hiring, and marketing playbooks for new segments.",
+      "Led initiatives resulting in 3cr+ sales per month.",
+      "Established channel sales structures across key regional clusters.",
+      "Designed performance tracking frameworks for sales teams."
+    ]
+  },
+  {
     id: "financing",
-    title: "Financing Tie-up",
+    title: "EV Financing Ecosystem",
     icon: Handshake,
-    description: "Strategic collaboration with financial institutions to enable easy credit for EV adoption.",
+    description: "Initiated EV financing ecosystem for 3W market to drive adoption.",
     details: [
-      "Secured partnerships with 5+ leading NBFCs and banks.",
-      "Reduced processing time for loan approvals by 40%.",
-      "Enabled flexible EMI options for e-rickshaw drivers, increasing sales conversion by 25%.",
-      "Developed a risk assessment framework for EV asset financing."
+      "Engaged 30+ NBFCs to design specialized battery financing structures.",
+      "Partnered with BFL to increase secondary sales by approximately 12%.",
+      "Reduced financial barriers for L3 segment customers.",
+      "Developed credit assessment models for first-time EV buyers."
     ]
   },
   {
-    id: "aftermarket",
-    title: "Aftermarket Launch & Growth",
+    id: "bom-optimization",
+    title: "BOM Cost Optimization",
     icon: Zap,
-    description: "Launch and expansion of high-performance inverter and e-rickshaw batteries.",
+    description: "Coordinated cross-functional teams to drive cost efficiency.",
     details: [
-      "Spearheaded the GTM strategy for the new range of inverter batteries.",
-      "Established a distribution network of 200+ dealers within the first 6 months.",
-      "Achieved 15% market share in the target regional clusters.",
-      "Implemented a digital warranty tracking system for improved customer trust."
-    ]
-  },
-  {
-    id: "e-rickshaw",
-    title: "E-Rickshaw Battery Growth",
-    icon: Battery,
-    description: "Scaling the e-rickshaw battery segment through product innovation and service excellence.",
-    details: [
-      "Optimized the supply chain to ensure 98% product availability across key hubs.",
-      "Launched a 'Battery Health Check' program that reduced warranty claims by 12%.",
-      "Collaborated with R&D to improve cycle life by 20% based on field feedback.",
-      "Designed a loyalty program for fleet operators."
+      "Optimized Bill of Materials (BOM) costs by 5% through strategic sourcing.",
+      "Enabled more competitive pricing in key accounts and bulk deals.",
+      "Streamlined procurement processes with R&D and Supply Chain teams.",
+      "Identified alternative component suppliers to mitigate supply risks."
     ]
   }
 ];
 
 export default function Geon() {
   return (
-    <div className="py-20 px-6 max-w-7xl mx-auto">
-      <Link to="/" className="inline-flex items-center gap-2 text-zinc-500 hover:text-emerald-600 transition-colors mb-12 group">
+    <div className="py-12 md:py-20 px-6 max-w-7xl mx-auto">
+      <Link to="/" className="inline-flex items-center gap-2 text-zinc-500 hover:text-emerald-600 transition-colors mb-8 md:mb-12 group text-sm md:text-base">
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
         Back to Portfolio
       </Link>
 
-      <header className="mb-20">
+      <header className="mb-12 md:mb-20">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-7xl font-bold text-zinc-900 tracking-tight mb-6"
+          className="text-4xl md:text-7xl font-bold text-zinc-900 tracking-tight mb-6 leading-tight"
         >
-          GEON <span className="text-emerald-600">(formerly Battrixx)</span>
+          GEON <span className="text-emerald-600 block sm:inline">(formerly Battrixx)</span>
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-xl text-zinc-600 max-w-3xl leading-relaxed"
+          className="text-lg md:text-xl text-zinc-600 max-w-3xl leading-relaxed"
         >
           As Senior Manager of Strategy & Alliance, I led critical initiatives to establish GEON as a leader in the EV battery and energy storage space. My focus was on building strategic partnerships and scaling aftermarket operations.
         </motion.p>
       </header>
 
-      <div className="space-y-32">
+      <div className="space-y-20 md:space-y-32">
         {projects.map((project, index) => (
           <motion.section 
             key={project.id}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start"
           >
             <div>
-              <div className="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-8">
-                <project.icon className="w-8 h-8" />
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-6 md:mb-8">
+                <project.icon className="w-7 h-7 md:w-8 md:h-8" />
               </div>
-              <h2 className="text-4xl font-bold text-zinc-900 mb-6">{project.title}</h2>
-              <p className="text-xl text-zinc-600 mb-8 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4 md:mb-6">{project.title}</h2>
+              <p className="text-lg md:text-xl text-zinc-600 mb-8 leading-relaxed">
                 {project.description}
               </p>
             </div>
             
-            <div className="bg-zinc-50 p-8 md:p-12 rounded-[40px] border border-zinc-100">
-              <h3 className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-8">Key Achievements</h3>
-              <ul className="space-y-6">
+            <div className="bg-zinc-50 p-6 md:p-12 rounded-[32px] md:rounded-[40px] border border-zinc-100">
+              <h3 className="text-xs md:text-sm font-bold text-emerald-600 uppercase tracking-widest mb-6 md:mb-8">Key Achievements</h3>
+              <ul className="space-y-4 md:space-y-6">
                 {project.details.map((detail, i) => (
-                  <li key={i} className="flex gap-4 text-zinc-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2.5 shrink-0"></div>
-                    <span className="text-lg leading-relaxed">{detail}</span>
+                  <li key={i} className="flex gap-3 md:gap-4 text-zinc-700">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 md:mt-2.5 shrink-0"></div>
+                    <span className="text-base md:text-lg leading-relaxed">{detail}</span>
                   </li>
                 ))}
               </ul>
@@ -101,12 +101,12 @@ export default function Geon() {
         ))}
       </div>
 
-      <section className="mt-40 p-12 md:p-20 bg-zinc-900 rounded-[60px] text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+      <section className="mt-20 md:mt-40 p-10 md:p-20 bg-zinc-900 rounded-[40px] md:rounded-[60px] text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
         <div className="relative z-10 text-center max-w-3xl mx-auto">
-          <TrendingUp className="w-16 h-16 text-emerald-500 mx-auto mb-8" />
-          <h2 className="text-4xl font-bold mb-6">Driving Growth & Innovation</h2>
-          <p className="text-xl text-zinc-400 leading-relaxed">
+          <TrendingUp className="w-12 h-12 md:w-16 md:h-16 text-emerald-500 mx-auto mb-6 md:mb-8" />
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Driving Growth & Innovation</h2>
+          <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
             The initiatives at GEON resulted in a 30% increase in overall market reach and established a robust foundation for the company's long-term strategy in the green energy sector.
           </p>
         </div>

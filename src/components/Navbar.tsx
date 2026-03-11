@@ -1,9 +1,19 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Menu, X, Linkedin } from "lucide-react";
 
 export default function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  const navItems = ["About", "Experience", "Education", "Skills", "Contact"];
 
   return (
     <motion.nav 
@@ -15,8 +25,10 @@ export default function Navbar() {
         <Link to="/" className="text-xl font-bold tracking-tighter text-zinc-900 uppercase">
           PURUSHOTTAM<span className="text-emerald-600">.</span>
         </Link>
+
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {["About", "Experience", "Education", "Skills", "Contact"].map((item) => (
+          {navItems.map((item) => (
             <Link 
               key={item} 
               to={isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
@@ -37,7 +49,51 @@ export default function Navbar() {
             View LinkedIn
           </a>
         </div>
+
+        {/* Mobile Toggle */}
+        <button 
+          className="md:hidden p-2 text-zinc-900"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-b border-zinc-100 overflow-hidden"
+          >
+            <div className="px-6 py-8 flex flex-col gap-6">
+              {navItems.map((item) => (
+                <Link 
+                  key={item} 
+                  to={isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
+                  className="text-lg font-bold text-zinc-900"
+                >
+                  {item}
+                </Link>
+              ))}
+              <div className="h-[1px] bg-zinc-100"></div>
+              <Link to="/geon" className="text-lg font-bold text-zinc-900">GEON Projects</Link>
+              <Link to="/ola" className="text-lg font-bold text-zinc-900">Ola Projects</Link>
+              <a 
+                href="https://www.linkedin.com/in/purushottam-puru/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-zinc-900 text-white px-6 py-4 rounded-2xl text-center font-bold flex items-center justify-center gap-2"
+              >
+                <Linkedin className="w-5 h-5" />
+                LinkedIn Profile
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }
