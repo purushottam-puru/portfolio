@@ -13,7 +13,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] md:text-xs font-semibold uppercase tracking-wider mb-6">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Available for Strategic Roles
+            Based in Pune, MH
           </div>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-zinc-900 mb-8 leading-[1.1] md:leading-[1]">
             Operations, Strategy <br className="hidden sm:block" />

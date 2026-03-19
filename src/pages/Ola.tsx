@@ -24,6 +24,7 @@ const projects = [
       "Spearheaded rollout of 4K+ fast chargers in 4 months.",
       "Managed vendors, demand density analysis, and utilisation monitoring.",
       "Built real-time dashboards tracking 5+ KPIs, driving data-driven optimizations.",
+      "Spearheaded nationwide rollout of 4K+ fast chargers in 4 months for last-mile fleet. [View Capacity Planner](/capacity)",
       "Improved sales process visibility and customer experience via 900+ COCO store dashboards."
     ]
   },
@@ -101,12 +102,25 @@ export default function Ola() {
             <div className="bg-zinc-50 p-6 md:p-12 rounded-[32px] md:rounded-[40px] border border-zinc-100">
               <h3 className="text-xs md:text-sm font-bold text-emerald-600 uppercase tracking-widest mb-6 md:mb-8">Key Achievements</h3>
               <ul className="space-y-4 md:space-y-6">
-                {project.details.map((detail, i) => (
-                  <li key={i} className="flex gap-3 md:gap-4 text-zinc-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 md:mt-2.5 shrink-0"></div>
-                    <span className="text-base md:text-lg leading-relaxed">{detail}</span>
-                  </li>
-                ))}
+                {project.details.map((detail, i) => {
+                  const linkMatch = typeof detail === 'string' ? detail.match(/\[(.*?)\]\((.*?)\)/) : null;
+                  return (
+                    <li key={i} className="flex gap-3 md:gap-4 text-zinc-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 md:mt-2.5 shrink-0"></div>
+                      <span className="text-base md:text-lg leading-relaxed">
+                        {linkMatch ? (
+                          <>
+                            {detail.split(linkMatch[0])[0]}
+                            <Link to={linkMatch[2]} className="text-emerald-600 font-bold hover:underline">
+                              {linkMatch[1]}
+                            </Link>
+                            {detail.split(linkMatch[0])[1]}
+                          </>
+                        ) : detail}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </motion.section>

@@ -3,6 +3,7 @@ import Experience from "../components/Experience";
 import Education from "../components/Education";
 import Skills from "../components/Skills";
 import Volunteering from "../components/Volunteering";
+import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -25,6 +26,7 @@ export default function Home() {
     <>
       <Hero />
       <Experience />
+      <Testimonials />
       <Education />
       <Skills />
       <Volunteering />

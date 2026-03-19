@@ -5,23 +5,40 @@ import { Link } from "react-router-dom";
 const fullTime = [
   {
     title: "Senior Manager - Strategy and Operations",
-    company: "GEON (Formerly Battrixx)",
-    location: "Pune, MH",
+    company: "GEON Energy (Formerly Battrixx)",
+    location: "Pune, India",
     period: "03/2025 - Present",
-    description: "Leading GTM strategy for Channel sales & Inverter Battery segment. Managed IB vertical (6 SKUs) and built battery financing ecosystem with 30+ NBFCs. Optimizing BOM costs by 5% through cross-functional coordination.",
-    skills: ["GTM Strategy", "P&L Management", "EV Financing", "BOM Optimization"],
+    description: "Creating GTM strategy for Channel sales & Inverter Battery segment; defined expansion playbooks leading to 5cr+ sales / month. Managing IB vertical (6 SKUs) and building financing ecosystem with 30+ NBFCs. Leading cross-functional teams to optimize BOM costs by 5%, driving cost efficiency and enabling competitive pricing in key accounts.",
+    skills: ["GTM Strategy", "P&L Management", "BOM Optimization", "Financing Ecosystem"],
     link: "/geon"
   },
   {
-    title: "Program Manager - Strategy and Operations",
+    title: "Manager - Strategy and Operations",
     company: "Ola Electric Technologies",
-    location: "Bangalore, KA",
+    location: "Bangalore, India",
     period: "05/2021 - 02/2025",
-    description: "Spearheaded pan-India launch of 4,000 stores and rollout of 4K+ fast chargers. Executed MBO project contributing 10% of overall sales. Drove ₹80 Cr GMV in 2 months for domestic GTM and built international market entry playbooks.",
-    skills: ["Program Management", "GTM Strategy", "Network Expansion", "International Markets"],
+    description: (
+      <div className="space-y-4">
+        <p>Spearheaded pan-India launch of 4,000 stores and achieved 100% on-time launch of 207 stores in 2 months for RJ region. Executed MBO project contributing 10% of overall sales.</p>
+        <p>
+          Spearheaded nationwide rollout of 4K+ fast chargers in 4 months for last-mile fleet. Built real-time dashboards tracking 5+ KPIs to maximize charger utilization.
+          <Link to="/capacity" className="inline-flex items-center gap-1 text-emerald-600 font-bold hover:underline ml-2">
+            [View Capacity Planner]
+          </Link>
+        </p>
+        <p>Drove operational transformation by automating lead management and payment processes, onboarding 1,100+ MBO partners in record 2 months. Built dashboards for 900+ COCO stores to improve sales process visibility.</p>
+      </div>
+    ),
+    skills: ["Program Management", "Network Expansion", "Operational Transformation", "GTM Strategy"],
     link: "/ola"
   }
 ];
+
+const recommendation = {
+  text: "Purushottam is a highly driven and results-oriented professional. His ability to lead cross-functional teams and execute complex strategies at scale was instrumental in our growth at Ola Electric.",
+  author: "Manager, Ola Electric",
+  link: "https://www.linkedin.com/in/purushottam-puru/"
+};
 
 const internships = [
   {
@@ -73,7 +90,7 @@ export default function Experience() {
                   </div>
                   <h4 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-2 group-hover:text-emerald-600 transition-colors">{exp.title}</h4>
                   <p className="text-base md:text-lg font-semibold text-zinc-500 mb-4 md:mb-6">{exp.company}</p>
-                  <p className="text-zinc-600 leading-relaxed mb-8 text-sm md:text-base">{exp.description}</p>
+                  <div className="text-zinc-600 leading-relaxed mb-8 text-sm md:text-base">{exp.description}</div>
                 </div>
                 
                 <div className="mt-auto pt-8 border-t border-zinc-100 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
@@ -97,6 +114,35 @@ export default function Experience() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Recommendation Section */}
+        <div className="mt-20 md:mt-32">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="bg-emerald-600 p-10 md:p-16 rounded-[40px] md:rounded-[60px] text-white relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+            <div className="relative z-10 max-w-3xl mx-auto text-center">
+              <div className="text-4xl md:text-6xl font-serif italic mb-8 opacity-50">"</div>
+              <p className="text-xl md:text-3xl font-medium leading-relaxed mb-10">
+                {recommendation.text}
+              </p>
+              <div className="flex flex-col items-center gap-4">
+                <div className="font-bold text-lg md:text-xl">{recommendation.author}</div>
+                <a 
+                  href={recommendation.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-100 hover:text-white transition-colors text-sm md:text-base underline underline-offset-4"
+                >
+                  View on LinkedIn
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* Internships Section */}

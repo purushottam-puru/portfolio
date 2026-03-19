@@ -45,7 +45,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-[10px] md:text-sm text-emerald-200 font-bold uppercase tracking-wider">Location</div>
-                    <div className="text-base md:text-xl font-bold">Bangalore, India</div>
+                    <div className="text-base md:text-xl font-bold">Pune, India</div>
                   </div>
                 </div>
               </div>
