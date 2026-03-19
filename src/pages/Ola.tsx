@@ -9,58 +9,46 @@ const projects = [
     icon: Network,
     description: "Led expansion strategy and executed Multi-Brand Outlet (MBO) project.",
     details: [
-      "Managed due diligence, commissions, and logistics for MBO partners.",
-      "Drove 10% of overall sales through the MBO channel.",
-      "Onboarded 1100+ MBO partners in record 2 months by automating lead management.",
-      "Improved lead-to-onboarding conversion by ~20% and boosted efficiency by ~50%."
-    ]
-  },
-  {
-    id: "store-launch",
-    title: "Mega Store Rollout",
-    icon: Store,
-    description: "Coordinated the massive scale launch of physical experience centers.",
-    details: [
-      "Launched 4,000 stores in a single day through cross-functional alignment.",
-      "Achieved 100% on-time readiness for RJ region (207 stores in 2 months).",
-      "Built real-time dashboards for 900+ COCO stores to track KPIs and test rides.",
-      "Standardized workflow design and risk mitigation for rapid scaling."
+      "Spearheaded pan-India launch of 4,000 stores; achieved 100% on-time launch of 207 stores in 2 months for RJ region.",
+      "Successfully scaled MBO channel to contribute 10% of overall sales.",
+      "Onboarded 1100+ MBO partners in record 2 months by automating lead management and payment processes.",
+      "Improved lead-to-onboarding conversion by ~20% and boosted operational efficiency by ~50%."
     ]
   },
   {
     id: "charging",
     title: "Charging Infrastructure",
     icon: Map,
-    description: "Nationwide expansion of fast charging infrastructure for fleet operations.",
+    description: "Nationwide rollout of fast charging infrastructure for last-mile fleet.",
     details: [
-      "Executed rollout of 4K+ fast chargers in 4 months for last-mile fleets.",
-      "Improved ops efficiency via real-time dashboards with 5+ critical KPIs.",
-      "Enhanced features to boost charger utilization and uptime.",
-      "Conducted demand density analysis for strategic site selection."
+      "Spearheaded rollout of 4K+ fast chargers in 4 months.",
+      "Managed vendors, demand density analysis, and utilisation monitoring.",
+      "Built real-time dashboards tracking 5+ KPIs, driving data-driven optimizations.",
+      "Improved sales process visibility and customer experience via 900+ COCO store dashboards."
+    ]
+  },
+  {
+    id: "international",
+    title: "International GTM Strategy",
+    icon: Globe,
+    description: "Built comprehensive market entry playbook for international launches.",
+    details: [
+      "Owned end-to-end P&L modeling, pricing simulations, and regulatory frameworks.",
+      "Shortlisted 200+ cities across 15+ countries (EU, UK, ANZ, ASEAN) for EV entry.",
+      "Built data-backed GTM prioritization model projecting 1Mn+ sales in 3 years.",
+      "Screened 500+ potential partners across 40+ countries assessing strategic alignment."
     ]
   },
   {
     id: "domestic-gtm",
     title: "Domestic GTM Strategy",
     icon: Rocket,
-    description: "Contributed to industry-first D2C model and product launches.",
+    description: "Contributed to industry-first D2C model and domestic product launches.",
     details: [
-      "Drove ₹80 Cr GMV in 2 months across 3,600 pin codes via consumer insights.",
-      "Structured and executed 25+ end-to-end BRDs & SOPs for customer journeys.",
-      "Achieved 100% compliance in <6 days during critical launch phases.",
-      "Increased test ride fulfilment to 82% from 65%, delivering ₹2 Cr annual savings."
-    ]
-  },
-  {
-    id: "international",
-    title: "International Playbook",
-    icon: Globe,
-    description: "Developed market entry blueprints for global expansion.",
-    details: [
-      "Oversaw Nepal launch, creating 5+ BRDs and pricing simulations.",
-      "Developed market entry playbook for future international launches from scratch.",
-      "Shortlisted 200+ cities across 15+ countries (EU, UK, ANZ, ASEAN) for EV entry.",
-      "Handled 500+ potential partners across 40+ countries for brand localization."
+      "Drove ₹80 Cr GMV in 2 months across 3 pincodes via market insights and benchmarking.",
+      "Structured and deployed 25+ end-to-end BRDs & SOPs mapping customer journey touchpoints.",
+      "Established real-time CFT across tech, sales, & ops to resolve edge cases; achieved 100% compliance in <6 days.",
+      "Optimised service & test ride operations via SAP; improved fulfilment from 65% to 82%, delivering ₹2 Cr annual savings."
     ]
   }
 ];

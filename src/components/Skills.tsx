@@ -57,7 +57,7 @@ export default function Skills() {
           {[
             { label: "Years Experience", value: "5+" },
             { label: "NBFC Partners", value: "30+" },
-            { label: "Monthly Sales", value: "3Cr+" },
+            { label: "Monthly Sales", value: "5Cr+" },
             { label: "Stores Launched", value: "4K+" }
           ].map((stat, i) => (
             <div key={i}>

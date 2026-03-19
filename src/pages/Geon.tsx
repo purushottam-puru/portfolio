@@ -7,22 +7,22 @@ const projects = [
     id: "gtm-strategy",
     title: "GTM Strategy & Sales",
     icon: TrendingUp,
-    description: "Created GTM strategy for 3W L3 channel sales & Inverter Battery segment.",
+    description: "Created GTM strategy for Channel sales & Inverter Battery segment.",
     details: [
-      "Defined operations, hiring, and marketing playbooks for new segments.",
-      "Led initiatives resulting in 3cr+ sales per month.",
-      "Established channel sales structures across key regional clusters.",
-      "Designed performance tracking frameworks for sales teams."
+      "Defined expansion playbooks leading to 5cr+ sales per month.",
+      "Owned sales strategy & P&L for mobility accounts.",
+      "Managed IB vertical (6 SKUs) and led CFT across supply chain, production & sales.",
+      "Established channel sales structures across key regional clusters."
     ]
   },
   {
     id: "financing",
     title: "EV Financing Ecosystem",
     icon: Handshake,
-    description: "Initiated EV financing ecosystem for 3W market to drive adoption.",
+    description: "Built battery financing ecosystem for 3W market to drive adoption.",
     details: [
-      "Engaged 30+ NBFCs to design specialized battery financing structures.",
-      "Partnered with BFL to increase secondary sales by approximately 12%.",
+      "Engaged 30+ NBFCs on specialized financing structures.",
+      "Partnered with BFL to grow secondary sales by ~12%.",
       "Reduced financial barriers for L3 segment customers.",
       "Developed credit assessment models for first-time EV buyers."
     ]
@@ -31,10 +31,10 @@ const projects = [
     id: "bom-optimization",
     title: "BOM Cost Optimization",
     icon: Zap,
-    description: "Coordinated cross-functional teams to drive cost efficiency.",
+    description: "Led cross-functional teams to optimize BOM costs by 5%.",
     details: [
-      "Optimized Bill of Materials (BOM) costs by 5% through strategic sourcing.",
-      "Enabled more competitive pricing in key accounts and bulk deals.",
+      "Drove cost efficiency through strategic sourcing and design optimization.",
+      "Enabled competitive pricing in key accounts and bulk deals.",
       "Streamlined procurement processes with R&D and Supply Chain teams.",
       "Identified alternative component suppliers to mitigate supply risks."
     ]

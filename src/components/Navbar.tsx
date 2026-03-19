@@ -40,6 +40,7 @@ export default function Navbar() {
           <div className="h-4 w-[1px] bg-zinc-200"></div>
           <Link to="/geon" className="text-sm font-medium text-zinc-600 hover:text-emerald-600 transition-colors">GEON</Link>
           <Link to="/ola" className="text-sm font-medium text-zinc-600 hover:text-emerald-600 transition-colors">Ola</Link>
+          <Link to="/capacity" className="text-sm font-medium text-zinc-600 hover:text-emerald-600 transition-colors">Capacity</Link>
           <a 
             href="https://www.linkedin.com/in/purushottam-puru/"
             target="_blank"
@@ -81,6 +82,7 @@ export default function Navbar() {
               <div className="h-[1px] bg-zinc-100"></div>
               <Link to="/geon" className="text-lg font-bold text-zinc-900">GEON Projects</Link>
               <Link to="/ola" className="text-lg font-bold text-zinc-900">Ola Projects</Link>
+              <Link to="/capacity" className="text-lg font-bold text-zinc-900">Capacity Planner</Link>
               <a 
                 href="https://www.linkedin.com/in/purushottam-puru/"
                 target="_blank"

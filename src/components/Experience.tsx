@@ -2,25 +2,28 @@ import { motion } from "motion/react";
 import { Briefcase, Calendar, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const experiences = [
+const fullTime = [
   {
-    title: "Senior Manager - Strategy & Alliance",
-    company: "GEON (formerly Battrixx)",
+    title: "Senior Manager - Strategy and Operations",
+    company: "GEON (Formerly Battrixx)",
     location: "Pune, MH",
     period: "03/2025 - Present",
-    description: "Leading GTM strategy for 3W L3 channel sales & Inverter Battery segment. Initiated EV financing ecosystem by engaging 30+ NBFCs. Optimizing BOM costs by 5% through cross-functional coordination.",
-    skills: ["GTM Strategy", "EV Financing", "BOM Optimization", "Strategic Alliances"],
+    description: "Leading GTM strategy for Channel sales & Inverter Battery segment. Managed IB vertical (6 SKUs) and built battery financing ecosystem with 30+ NBFCs. Optimizing BOM costs by 5% through cross-functional coordination.",
+    skills: ["GTM Strategy", "P&L Management", "EV Financing", "BOM Optimization"],
     link: "/geon"
   },
   {
-    title: "Program Manager - Strategy & Operations",
-    company: "Ola Electric",
+    title: "Program Manager - Strategy and Operations",
+    company: "Ola Electric Technologies",
     location: "Bangalore, KA",
     period: "05/2021 - 02/2025",
-    description: "Led network expansion strategy and MBO project driving 10% of overall sales. Coordinated the launch of 4,000 stores in one day. Executed nationwide expansion of 4K+ fast charging infrastructure.",
-    skills: ["Network Expansion", "MBO Strategy", "Infrastructure Scaling", "GTM Strategy"],
+    description: "Spearheaded pan-India launch of 4,000 stores and rollout of 4K+ fast chargers. Executed MBO project contributing 10% of overall sales. Drove ₹80 Cr GMV in 2 months for domestic GTM and built international market entry playbooks.",
+    skills: ["Program Management", "GTM Strategy", "Network Expansion", "International Markets"],
     link: "/ola"
-  },
+  }
+];
+
+const internships = [
   {
     title: "Marketing Intern",
     company: "Vodafone Idea Ltd",
@@ -45,11 +48,11 @@ export default function Experience() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-20 text-center">
           <h2 className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-4">Professional Journey</h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-zinc-900 tracking-tight">5 Years of Impact.</h3>
+          <h3 className="text-3xl md:text-5xl font-bold text-zinc-900 tracking-tight">Full-Time Impact.</h3>
         </div>
         
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-          {experiences.map((exp, index) => (
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-20">
+          {fullTime.map((exp, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -58,7 +61,6 @@ export default function Experience() {
               transition={{ delay: index * 0.1 }}
               className="bg-white p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-zinc-200 shadow-sm hover:shadow-xl hover:border-emerald-200 transition-all group flex flex-col h-full relative overflow-hidden"
             >
-              {/* Decorative background icon for desktop */}
               <div className="absolute -right-4 -top-4 text-zinc-50 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity hidden lg:block">
                 <Briefcase className="w-40 h-40" />
               </div>
@@ -95,6 +97,42 @@ export default function Experience() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Internships Section */}
+        <div className="mt-20">
+          <div className="mb-12">
+            <h4 className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-2">Early Career</h4>
+            <h3 className="text-2xl md:text-3xl font-bold text-zinc-900">Internships</h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {internships.map((exp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white/50 p-6 rounded-3xl border border-zinc-200 hover:border-emerald-200 transition-all group"
+              >
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-zinc-400 text-[10px] md:text-xs font-medium mb-3">
+                  <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {exp.period}</span>
+                  <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {exp.location}</span>
+                </div>
+                <h5 className="text-lg md:text-xl font-bold text-zinc-900 mb-1">{exp.title}</h5>
+                <p className="text-sm md:text-base font-semibold text-zinc-500 mb-3">{exp.company}</p>
+                <p className="text-zinc-600 text-xs md:text-sm leading-relaxed mb-4">{exp.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {exp.skills.map((skill, i) => (
+                    <span key={i} className="px-2 py-1 rounded-md bg-zinc-100 text-zinc-500 text-[9px] md:text-[10px] font-bold uppercase tracking-wider">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
