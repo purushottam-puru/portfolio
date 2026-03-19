@@ -119,36 +119,6 @@ export default function Experience() {
           ))}
         </div>
 
-        {/* Recommendation Section */}
-        <div className="mt-20 md:mt-32">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-emerald-600 p-10 md:p-16 rounded-[40px] md:rounded-[60px] text-white relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
-            <div className="relative z-10 max-w-3xl mx-auto text-center">
-              <div className="text-4xl md:text-6xl font-serif italic mb-8 opacity-50">"</div>
-              <p className="text-xl md:text-3xl font-medium leading-relaxed mb-10">
-                {recommendation.text}
-              </p>
-              <div className="flex flex-col items-center gap-4">
-                <div className="font-bold text-lg md:text-xl">{recommendation.author}</div>
-                <div className="text-emerald-100 text-sm md:text-base opacity-80">{recommendation.title}</div>
-                <a 
-                  href={recommendation.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-emerald-100 hover:text-white transition-colors text-sm md:text-base underline underline-offset-4 mt-2"
-                >
-                  View on LinkedIn
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
         {/* Internships Section */}
         <div className="mt-20">
           <div className="mb-12">
