@@ -101,16 +101,6 @@ export default function Geon() {
         ))}
       </div>
 
-      <section className="mt-20 md:mt-40 p-10 md:p-20 bg-zinc-900 rounded-[40px] md:rounded-[60px] text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <div className="relative z-10 text-center max-w-3xl mx-auto">
-          <TrendingUp className="w-12 h-12 md:w-16 md:h-16 text-emerald-500 mx-auto mb-6 md:mb-8" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Driving Growth & Innovation</h2>
-          <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
-            The initiatives at GEON resulted in a 30% increase in overall market reach and established a robust foundation for the company's long-term strategy in the green energy sector.
-          </p>
-        </div>
-      </section>
     </div>
   );
 }

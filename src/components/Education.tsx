@@ -36,8 +36,8 @@ export default function Education() {
                 </div>
                 <div>
                   <h4 className="text-xl md:text-2xl font-bold text-zinc-900 mb-1">Bachelor of Mass Communication</h4>
-                  <p className="text-zinc-500 font-semibold mb-2 text-sm md:text-base">L. S. College, Muzaffarpur</p>
-                  <p className="text-zinc-600 text-xs md:text-sm">Class of 2019. Foundational degree in communication.</p>
+                  <p className="text-zinc-500 font-semibold mb-2 text-sm md:text-base">St. Xavier's College, Ranchi</p>
+                  <p className="text-zinc-600 text-xs md:text-sm">Class of 2019. Foundational degree in mass communication.</p>
                 </div>
               </div>
             </div>

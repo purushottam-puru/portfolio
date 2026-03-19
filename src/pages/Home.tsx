@@ -26,7 +26,6 @@ export default function Home() {
     <>
       <Hero />
       <Experience />
-      <Testimonials />
       <Education />
       <Skills />
       <Volunteering />

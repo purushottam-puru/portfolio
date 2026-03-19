@@ -35,8 +35,9 @@ const fullTime = [
 ];
 
 const recommendation = {
-  text: "Purushottam is a highly driven and results-oriented professional. His ability to lead cross-functional teams and execute complex strategies at scale was instrumental in our growth at Ola Electric.",
-  author: "Manager, Ola Electric",
+  text: "I had the opportunity to supervise Purushottam and was consistently impressed by his proactive approach and strong analytical abilities. He brings clarity to complex problems and contributes meaningfully to strategic decisions that drive business outcomes. He led the sales strategy and planning for Geon and made a key contribution in developing and sharping the process.\n\nPurushottam is also an excellent collaborator who manages stakeholder relationships effectively and ensures that work moves forward smoothly. He takes ownership of responsibilities and delivers with reliability. He further led strategic partnerships with charging players, recyclers and several other partners which had a key impact on the growth of Geon.\n\nI would gladly recommend him as a capable, astute and dependable professional.",
+  author: "Arnab Saha",
+  title: "Senior Vice President, Strategy & Business Operations at Geon Energy",
   link: "https://www.linkedin.com/in/purushottam-puru/"
 };
 
@@ -88,8 +89,10 @@ export default function Experience() {
                     <span className="flex items-center gap-1.5 bg-zinc-50 px-3 py-1 rounded-full"><Calendar className="w-3.5 h-3.5 text-emerald-600" /> {exp.period}</span>
                     <span className="flex items-center gap-1.5 bg-zinc-50 px-3 py-1 rounded-full"><MapPin className="w-3.5 h-3.5 text-emerald-600" /> {exp.location}</span>
                   </div>
-                  <h4 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-2 group-hover:text-emerald-600 transition-colors">{exp.title}</h4>
-                  <p className="text-base md:text-lg font-semibold text-zinc-500 mb-4 md:mb-6">{exp.company}</p>
+                  <Link to={exp.link} className="block group/title">
+                    <h4 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-2 group-hover/title:text-emerald-600 transition-colors">{exp.title}</h4>
+                    <p className="text-base md:text-lg font-semibold text-zinc-500 mb-4 md:mb-6">{exp.company}</p>
+                  </Link>
                   <div className="text-zinc-600 leading-relaxed mb-8 text-sm md:text-base">{exp.description}</div>
                 </div>
                 
@@ -132,11 +135,12 @@ export default function Experience() {
               </p>
               <div className="flex flex-col items-center gap-4">
                 <div className="font-bold text-lg md:text-xl">{recommendation.author}</div>
+                <div className="text-emerald-100 text-sm md:text-base opacity-80">{recommendation.title}</div>
                 <a 
                   href={recommendation.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-emerald-100 hover:text-white transition-colors text-sm md:text-base underline underline-offset-4"
+                  className="text-emerald-100 hover:text-white transition-colors text-sm md:text-base underline underline-offset-4 mt-2"
                 >
                   View on LinkedIn
                 </a>
