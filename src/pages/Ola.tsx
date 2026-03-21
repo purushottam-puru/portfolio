@@ -126,17 +126,6 @@ export default function Ola() {
           </motion.section>
         ))}
       </div>
-
-      <section className="mt-20 md:mt-40 p-10 md:p-20 bg-emerald-600 rounded-[40px] md:rounded-[60px] text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-emerald-500 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
-        <div className="relative z-10 text-center max-w-3xl mx-auto">
-          <Map className="w-12 h-12 md:w-16 md:h-16 text-emerald-200 mx-auto mb-6 md:mb-8" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Scaling the Future of Mobility</h2>
-          <p className="text-lg md:text-xl text-emerald-50 leading-relaxed">
-            From launching thousands of stores to mapping out international expansion, my time at Ola was defined by rapid execution and solving complex operational challenges at scale.
-          </p>
-        </div>
-      </section>
     </div>
   );
 }

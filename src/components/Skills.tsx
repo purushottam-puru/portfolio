@@ -57,8 +57,8 @@ export default function Skills() {
           {[
             { label: "Years Experience", value: "5+" },
             { label: "Partners Onboarded", value: "1,100+" },
-            { label: "GMV Driven", value: "₹80 Cr+" },
-            { label: "Annual Savings", value: "₹2 Cr+" }
+            { label: "Inverter Business", value: "₹4 Cr+" },
+            { label: "Process Optimizations", value: "10+" }
           ].map((stat, i) => (
             <div key={i}>
               <div className="text-3xl md:text-4xl font-bold text-emerald-500 mb-2">{stat.value}</div>

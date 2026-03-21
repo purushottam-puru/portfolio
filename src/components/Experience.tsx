@@ -8,7 +8,7 @@ const fullTime = [
     company: "GEON Energy (Formerly Battrixx)",
     location: "Pune, India",
     period: "03/2025 - Present",
-    description: "Creating GTM strategy for Channel sales & Inverter Battery segment; defined expansion playbooks leading to 5cr+ sales / month. Managing IB vertical (6 SKUs) and building financing ecosystem with 30+ NBFCs. Leading cross-functional teams to optimize BOM costs by 5%, driving cost efficiency and enabling competitive pricing in key accounts.",
+    description: "Creating GTM strategy for Channel sales & Inverter Battery segment; defined expansion playbooks leading to 4Cr+ sales / month. Managing IB vertical (6 SKUs) and building financing ecosystem with 30+ NBFCs. Leading cross-functional teams to optimize BOM costs by 5%, driving cost efficiency and enabling competitive pricing in key accounts.",
     skills: ["GTM Strategy", "P&L Management", "BOM Optimization", "Financing Ecosystem"],
     link: "/geon"
   },
@@ -20,10 +20,11 @@ const fullTime = [
     description: (
       <div className="space-y-4">
         <p>Spearheaded pan-India launch of 4,000 stores and achieved 100% on-time launch of 207 stores in 2 months for RJ region. Executed MBO project contributing 10% of overall sales.</p>
+        <p>Spearheaded nationwide rollout of 4K+ fast chargers in 4 months for last-mile fleet. Built real-time dashboards tracking 5+ KPIs to maximize charger utilization.</p>
         <p>
-          Spearheaded nationwide rollout of 4K+ fast chargers in 4 months for last-mile fleet. Built real-time dashboards tracking 5+ KPIs to maximize charger utilization.
+          Established the <span className="text-emerald-600 font-bold">Customer Care setup</span> from scratch, defining SOPs and staffing requirements. 
           <Link to="/capacity" className="inline-flex items-center gap-1 text-emerald-600 font-bold hover:underline ml-2">
-            [View Capacity Planner]
+            [View Staffing Model]
           </Link>
         </p>
         <p>Drove operational transformation by automating lead management and payment processes, onboarding 1,100+ MBO partners in record 2 months. Built dashboards for 900+ COCO stores to improve sales process visibility.</p>

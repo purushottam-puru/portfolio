@@ -9,7 +9,7 @@ const projects = [
     icon: TrendingUp,
     description: "Created GTM strategy for Channel sales & Inverter Battery segment.",
     details: [
-      "Defined expansion playbooks leading to 5cr+ sales per month.",
+      "Defined expansion playbooks leading to 4Cr+ sales per month.",
       "Owned sales strategy & P&L for mobility accounts.",
       "Managed IB vertical (6 SKUs) and led CFT across supply chain, production & sales.",
       "Established channel sales structures across key regional clusters."
@@ -41,6 +41,13 @@ const projects = [
   }
 ];
 
+const recommendation = {
+  text: "I had the opportunity to supervise Purushottam and was consistently impressed by his proactive approach and strong analytical abilities. He brings clarity to complex problems and contributes meaningfully to strategic decisions that drive business outcomes. He led the sales strategy and planning for Geon and made a key contribution in developing and sharping the process.\n\nPurushottam is also an excellent collaborator who manages stakeholder relationships effectively and ensures that work moves forward smoothly. He takes ownership of responsibilities and delivers with reliability. He further led strategic partnerships with charging players, recyclers and several other partners which had a key impact on the growth of Geon.\n\nI would gladly recommend him as a capable, astute and dependable professional.",
+  author: "Arnab Saha",
+  title: "Senior Vice President, Strategy & Business Operations at Geon Energy",
+  link: "https://www.linkedin.com/in/purushottam-puru/"
+};
+
 export default function Geon() {
   return (
     <div className="py-12 md:py-20 px-6 max-w-7xl mx-auto">
@@ -67,7 +74,7 @@ export default function Geon() {
         </motion.p>
       </header>
 
-      <div className="space-y-20 md:space-y-32">
+      <div className="space-y-20 md:space-y-32 mb-20 md:mb-32">
         {projects.map((project, index) => (
           <motion.section 
             key={project.id}
@@ -101,6 +108,34 @@ export default function Geon() {
         ))}
       </div>
 
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-zinc-900 rounded-[40px] md:rounded-[60px] p-8 md:p-20 text-white relative overflow-hidden"
+      >
+        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h2 className="text-sm font-bold text-emerald-400 uppercase tracking-widest mb-8 md:mb-12">Manager Recommendation</h2>
+          <blockquote className="text-xl md:text-3xl font-medium leading-relaxed mb-10 md:mb-12 italic text-zinc-200">
+            "{recommendation.text}"
+          </blockquote>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-8 border-t border-zinc-800">
+            <div>
+              <div className="text-lg md:text-xl font-bold text-white">{recommendation.author}</div>
+              <div className="text-sm md:text-base text-zinc-400">{recommendation.title}</div>
+            </div>
+            <a 
+              href={recommendation.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-emerald-400 font-bold hover:text-emerald-300 transition-colors"
+            >
+              View on LinkedIn
+            </a>
+          </div>
+        </div>
+      </motion.section>
     </div>
   );
 }
