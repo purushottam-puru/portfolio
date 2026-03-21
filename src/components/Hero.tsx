@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, Github } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -36,12 +36,23 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-2xl border border-zinc-200 flex items-center justify-center text-zinc-600 hover:bg-zinc-50 hover:border-zinc-300 transition-all"
+                title="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
+                href="https://github.com/purushottam-puru" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-2xl border border-zinc-200 flex items-center justify-center text-zinc-600 hover:bg-zinc-50 hover:border-zinc-300 transition-all"
+                title="GitHub"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a 
                 href="mailto:purushottam.puru01@gmail.com" 
                 className="w-12 h-12 rounded-2xl border border-zinc-200 flex items-center justify-center text-zinc-600 hover:bg-zinc-50 hover:border-zinc-300 transition-all"
+                title="Email"
               >
                 <Mail className="w-5 h-5" />
               </a>

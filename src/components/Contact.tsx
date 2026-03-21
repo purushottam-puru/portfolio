@@ -1,7 +1,44 @@
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { useState, FormEvent } from "react";
 
 export default function Contact() {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("submitting");
+    
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      // Using Formspree for easy email handling without a backend
+      // Note: Replace 'your-form-id' with an actual Formspree ID if needed
+      const response = await fetch("https://formspree.io/f/purushottam.puru01@gmail.com", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        const result = await response.json();
+        setErrorMessage(result.error || "Something went wrong. Please try again.");
+        setStatus("error");
+      }
+    } catch (error) {
+      setErrorMessage("Failed to connect to the server. Please check your internet connection.");
+      setStatus("error");
+    }
+  };
+
   return (
     <section id="contact" className="py-20 md:py-32 px-6">
       <div className="max-w-7xl mx-auto">
@@ -52,30 +89,85 @@ export default function Contact() {
             </div>
             
             <div className="bg-white rounded-[32px] md:rounded-[40px] p-6 md:p-10 shadow-2xl">
-              <form className="space-y-4 md:space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Name</label>
-                    <input type="text" className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all text-sm md:text-base" placeholder="John Doe" />
+              {status === "success" ? (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="h-full flex flex-col items-center justify-center text-center py-12"
+                >
+                  <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-6">
+                    <CheckCircle2 className="w-10 h-10" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-zinc-900 mb-4">Message Sent!</h4>
+                  <p className="text-zinc-600 mb-8">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                  <button 
+                    onClick={() => setStatus("idle")}
+                    className="text-emerald-600 font-bold hover:underline"
+                  >
+                    Send another message
+                  </button>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Name</label>
+                      <input 
+                        required
+                        name="name"
+                        type="text" 
+                        className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all text-sm md:text-base" 
+                        placeholder="John Doe" 
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Email</label>
+                      <input 
+                        required
+                        name="email"
+                        type="email" 
+                        className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all text-sm md:text-base" 
+                        placeholder="john@example.com" 
+                      />
+                    </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Email</label>
-                    <input type="email" className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all text-sm md:text-base" placeholder="john@example.com" />
+                    <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Subject</label>
+                    <input 
+                      required
+                      name="subject"
+                      type="text" 
+                      className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all text-sm md:text-base" 
+                      placeholder="Strategic Partnership" 
+                    />
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Subject</label>
-                  <input type="text" className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all text-sm md:text-base" placeholder="Strategic Partnership" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Message</label>
-                  <textarea rows={4} className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all resize-none text-sm md:text-base" placeholder="Tell me about your project..."></textarea>
-                </div>
-                <button className="w-full bg-emerald-600 text-white py-4 md:py-5 rounded-xl md:rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-100 group text-sm md:text-base">
-                  Send Message
-                  <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </button>
-              </form>
+                  <div className="space-y-2">
+                    <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Message</label>
+                    <textarea 
+                      required
+                      name="message"
+                      rows={4} 
+                      className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all resize-none text-sm md:text-base" 
+                      placeholder="Tell me about your project..."
+                    ></textarea>
+                  </div>
+
+                  {status === "error" && (
+                    <div className="flex items-center gap-2 text-red-600 text-sm font-medium bg-red-50 p-4 rounded-xl">
+                      <AlertCircle className="w-4 h-4" />
+                      {errorMessage}
+                    </div>
+                  )}
+
+                  <button 
+                    disabled={status === "submitting"}
+                    className="w-full bg-emerald-600 text-white py-4 md:py-5 rounded-xl md:rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-100 group text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {status === "submitting" ? "Sending..." : "Send Message"}
+                    <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
