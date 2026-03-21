@@ -14,8 +14,15 @@ export default function Contact() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      // Using Formspree for easy email handling without a backend
-      // Note: Replace 'your-form-id' with an actual Formspree ID if needed
+      // 1. Save to local database via our new API
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }).catch(err => console.error("Local API error:", err));
+
+      // 2. Send via Formspree for email notification
+      // Destination email: purushottam.puru01@gmail.com
       const response = await fetch("https://formspree.io/f/purushottam.puru01@gmail.com", {
         method: "POST",
         body: JSON.stringify(data),
@@ -30,11 +37,15 @@ export default function Contact() {
         (e.target as HTMLFormElement).reset();
       } else {
         const result = await response.json();
-        setErrorMessage(result.error || "Something went wrong. Please try again.");
+        if (result.error && result.error.includes("not set up")) {
+          setErrorMessage("Formspree needs confirmation. Please check purushottam.puru01@gmail.com for a confirmation email from Formspree and click 'Confirm'.");
+        } else {
+          setErrorMessage(result.error || "Something went wrong. Please try again.");
+        }
         setStatus("error");
       }
     } catch (error) {
-      setErrorMessage("Failed to connect to the server. Please check your internet connection.");
+      setErrorMessage("Failed to connect to the server. Your message was saved locally, but email notification failed.");
       setStatus("error");
     }
   };
@@ -44,7 +55,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         <div className="bg-emerald-600 rounded-[32px] md:rounded-[60px] p-8 md:p-24 text-white relative overflow-hidden">
           {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-emerald-500 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-emerald-50 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-emerald-700 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
           
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
@@ -98,8 +109,13 @@ export default function Contact() {
                   <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-6">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
-                  <h4 className="text-2xl font-bold text-zinc-900 mb-4">Message Sent!</h4>
-                  <p className="text-zinc-600 mb-8">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                  <h4 className="text-2xl font-bold text-zinc-900 mb-4">Message Received!</h4>
+                  <p className="text-zinc-600 mb-4">Your message has been saved locally.</p>
+                  <div className="bg-emerald-50 p-6 rounded-2xl border border-emerald-100 mb-8 max-w-md">
+                    <p className="text-emerald-800 text-sm font-medium leading-relaxed">
+                      <strong>Important:</strong> To receive email notifications, please check your inbox (<strong>purushottam.puru01@gmail.com</strong>) for a confirmation email from Formspree and click "Confirm".
+                    </p>
+                  </div>
                   <button 
                     onClick={() => setStatus("idle")}
                     className="text-emerald-600 font-bold hover:underline"
