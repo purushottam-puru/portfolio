@@ -33,7 +33,10 @@ export default function Contact() {
       }
 
       // 2. Send via Formspree for email notification
-      const response = await fetch("https://formspree.io/f/purushottam.puru01@gmail.com", {
+      const formspreeUrl = "https://formspree.io/purushottam.puru01@gmail.com";
+      console.log("Submitting to Formspree (v2):", formspreeUrl);
+      
+      const response = await fetch(formspreeUrl, {
         method: "POST",
         body: formspreeData,
         headers: {
@@ -63,6 +66,7 @@ export default function Contact() {
     <section id="contact" className="py-20 md:py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="bg-emerald-600 rounded-[32px] md:rounded-[60px] p-8 md:p-24 text-white relative overflow-hidden">
+          {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-emerald-50 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-emerald-700 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
           
@@ -193,6 +197,17 @@ export default function Contact() {
                 </form>
               )}
             </div>
+          </div>
+        </div>
+        
+        <div className="mt-12 md:mt-20 pt-10 border-t border-zinc-100 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-zinc-400 text-xs md:text-sm font-medium text-center md:text-left">
+            © 2026 Purushottam. All rights reserved.
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
+              <a key={item} href="#" className="text-xs md:text-sm text-zinc-400 hover:text-emerald-600 transition-colors">{item}</a>
+            ))}
           </div>
         </div>
       </div>
