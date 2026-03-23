@@ -20,7 +20,7 @@ export default function Hero() {
             <span className="text-zinc-400">& Growth Expert.</span>
           </h1>
           <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mb-10 leading-relaxed mx-auto lg:mx-0">
-            IIM Bangalore MBA with 5+ years of experience across the EV ecosystem. Expert in strategy, operations, market expansion, and process optimization to drive high-impact growth.
+            Strategy & Operations leader in the EV ecosystem with experience across OEM, charging infrastructure, and battery manufacturing. IIM Bangalore MBA with a proven track record of leading 0→1 and scale initiatives, including 4,000+ store rollouts and nationwide charging deployments.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <a 

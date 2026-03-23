@@ -7,49 +7,49 @@ const projects = [
     id: "network",
     title: "Network Expansion & MBO",
     icon: Network,
-    description: "Led expansion strategy and executed Multi-Brand Outlet (MBO) project.",
+    description: "Executed pan-India rollout of 4,000 stores and Multi-Brand Outlet (MBO) strategy.",
     details: [
-      "Spearheaded pan-India launch of 4,000 stores; achieved 100% on-time launch of 207 stores in 2 months for RJ region.",
-      "Successfully scaled MBO channel to contribute 10% of overall sales.",
-      "Onboarded 1100+ MBO partners in record 2 months by automating lead management and payment processes.",
-      "Improved lead-to-onboarding conversion by ~20% and boosted operational efficiency by ~50%."
+      "Launched 207 stores in 2 months with 100% on-time delivery for Rajasthan region.",
+      "Designed multi-brand outlet expansion contributing ~10% of total sales.",
+      "Built automated lead management & payment systems; onboarded 1,100+ partners in 2 months.",
+      "Improved lead-to-onboarding conversion by ~20% through process automation."
     ]
   },
   {
     id: "charging",
     title: "Charging Infrastructure",
     icon: Map,
-    description: "Nationwide rollout of fast charging infrastructure for last-mile fleet.",
+    description: "Led deployment strategy for 4K+ fast chargers nationwide for fleet business.",
     details: [
-      "Spearheaded rollout of 4K+ fast chargers in 4 months.",
-      "Managed vendors, demand density analysis, and utilisation monitoring.",
-      "Built real-time dashboards tracking 5+ KPIs, driving data-driven optimizations.",
-      "Spearheaded nationwide rollout of 4K+ fast chargers in 4 months for last-mile fleet. [View Capacity Planner](/capacity)",
-      "Improved sales process visibility and customer experience via 900+ COCO store dashboards."
+      "Managed vendors, infra readiness, and operational KPIs for nationwide rollout.",
+      "Developed real-time dashboards tracking utilization, uptime, & operational metrics.",
+      "Improved network efficiency and reduced downtime through data-driven monitoring.",
+      "Spearheaded nationwide rollout of 4K+ fast chargers in 4 months for last-mile fleet. [View Capacity Planner](/capacity)"
     ]
   },
   {
     id: "international",
     title: "International GTM Strategy",
     icon: Globe,
-    description: "Built comprehensive market entry playbook for international launches.",
+    description: "Developed international GTM and market entry strategy across EU, ANZ, ASEAN, & SAARC regions.",
     details: [
-      "Owned end-to-end P&L modeling, pricing simulations, and regulatory frameworks.",
-      "Shortlisted 200+ cities across 15+ countries (EU, UK, ANZ, ASEAN) for EV entry.",
-      "Built data-backed GTM prioritization model projecting 1Mn+ sales in 3 years.",
-      "Screened 500+ potential partners across 40+ countries assessing strategic alignment."
+      "Defined pricing, margin, and distribution models for international markets.",
+      "Built data-backed expansion roadmap with ~1M unit sales potential over 3 years.",
+      "Shortlisted 200+ cities across 15+ countries leveraging TAM/SAM & unit economics.",
+      "Evaluated 500+ potential partners across 40+ countries assessing strategic alignment.",
+      "Represented Ola at EICMA (Milan) & NADA (Nepal) to lay groundwork for entry."
     ]
   },
   {
     id: "domestic-gtm",
     title: "Domestic GTM Strategy",
     icon: Rocket,
-    description: "Contributed to industry-first D2C model and domestic product launches.",
+    description: "Launched industry-first D2C sales model and domestic product strategies.",
     details: [
-      "Drove ₹80 Cr GMV in 2 months across 3 pincodes via market insights and benchmarking.",
-      "Structured and deployed 25+ end-to-end BRDs & SOPs mapping customer journey touchpoints.",
-      "Established real-time CFT across tech, sales, & ops to resolve edge cases; achieved 100% compliance in <6 days.",
-      "Optimised service & test ride operations via SAP; improved fulfilment from 65% to 82%, delivering ₹2 Cr annual savings."
+      "Enabled ₹80Cr GMV in the first 2 months across 3,600+ pin codes.",
+      "Designed end-to-end operating model across digital, field ops, service, & CX support.",
+      "Slashed 10K+ ticket backlog by 50% within a week by syncing 5 workstreams.",
+      "Redesigned allocation logic in SAP, improving test ride fulfilment from 65% → 82% and saving ₹2Cr annually."
     ]
   }
 ];

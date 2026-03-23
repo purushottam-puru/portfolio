@@ -2,20 +2,20 @@ import { motion } from "motion/react";
 
 const skillCategories = [
   {
-    category: "Strategic",
-    skills: ["GTM Strategy", "Business Model Design", "Zero-Based Budgeting", "Market Sizing & TAM Analysis", "Market Expansion"]
+    category: "Strategy & Business",
+    skills: ["GTM Strategy", "Market Entry", "Business Model Design", "P&L Ownership", "Market Sizing (TAM/SAM)"]
   },
   {
-    category: "Analytical",
-    skills: ["Data Analytics", "Power BI", "Tableau", "SQL", "Google Sheets", "JIRA", "MIS"]
+    category: "Analytics & Tools",
+    skills: ["Data Analytics", "SQL", "Power BI", "Tableau", "Google Sheets", "MIS", "JIRA"]
   },
   {
-    category: "Operational",
-    skills: ["Program Management", "Process Optimization", "Process Excellence", "Agile/Scrum", "BOM Optimization"]
+    category: "Operations",
+    skills: ["Program Management", "Process Optimization", "Agile/Scrum", "SOP Design", "Process Excellence"]
   },
   {
     category: "Leadership",
-    skills: ["Conflict Resolution", "Executive Presentation", "CFTs", "Vendor Negotiation", "Stakeholder Alignment"]
+    skills: ["Cross-functional Leadership", "Stakeholder Management", "Vendor Negotiation", "Executive Communication"]
   }
 ];
 

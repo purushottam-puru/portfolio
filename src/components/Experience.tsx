@@ -8,7 +8,15 @@ const fullTime = [
     company: "GEON Energy (Formerly Battrixx)",
     location: "Pune, India",
     period: "03/2025 - Present",
-    description: "Creating GTM strategy for Channel sales & Inverter Battery segment; defined expansion playbooks leading to 4Cr+ sales / month. Managing IB vertical (6 SKUs) and building financing ecosystem with 30+ NBFCs. Leading cross-functional teams to optimize BOM costs by 5%, driving cost efficiency and enabling competitive pricing in key accounts.",
+    description: (
+      <ul className="space-y-2 list-disc pl-4">
+        <li>Led P&L strategy for key mobility accounts, aligning supply chain, production, & sales to improve margins.</li>
+        <li>Owned GTM strategy & expansion for channel sales & inverter battery segment; built entry playbook driving ₹4Cr+ monthly revenue.</li>
+        <li>Built & scaled strategic partnerships with recyclers (₹1Cr+ business) & channel partners (₹20L+/month sales).</li>
+        <li>Built financing ecosystem by engaging 30+ NBFCs; partnered with Bajaj Finance to increase secondary sales by ~12%.</li>
+        <li>Led cross-functional cost optimization initiatives, reducing BOM costs by 5%.</li>
+      </ul>
+    ),
     skills: ["GTM Strategy", "P&L Management", "BOM Optimization", "Financing Ecosystem"],
     link: "/geon"
   },
@@ -19,18 +27,38 @@ const fullTime = [
     period: "05/2021 - 02/2025",
     description: (
       <div className="space-y-4">
-        <p>Spearheaded pan-India launch of 4,000 stores and achieved 100% on-time launch of 207 stores in 2 months for RJ region. Executed MBO project contributing 10% of overall sales.</p>
-        <p>Spearheaded nationwide rollout of 4K+ fast chargers in 4 months for last-mile fleet. Built real-time dashboards tracking 5+ KPIs to maximize charger utilization.</p>
-        <p>
-          Established the <span className="text-emerald-600 font-bold">Customer Care setup</span> from scratch, defining SOPs and staffing requirements. 
-          <Link to="/capacity" className="inline-flex items-center gap-1 text-emerald-600 font-bold hover:underline ml-2">
-            [View Staffing Model]
+        <ul className="space-y-2 list-disc pl-4">
+          <li>Executed pan-India rollout of 4,000 stores; launched 207 stores in 2 months with 100% on-time delivery for RJ region.</li>
+          <li>Designed multi-brand outlet expansion contributing ~10% of total sales.</li>
+          <li>Built automated lead management & payment systems; onboarded 1,100+ partners in 2 months improving conversion by ~20%.</li>
+          <li>Led deployment strategy for 4K+ fast chargers nationwide for fleet business.</li>
+          <li>Developed real-time dashboards tracking utilization, uptime, & operational metrics.</li>
+        </ul>
+        <p className="text-sm">
+          <Link to="/capacity" className="inline-flex items-center gap-1 text-emerald-600 font-bold hover:underline">
+            [View Staffing Model Project]
           </Link>
         </p>
-        <p>Drove operational transformation by automating lead management and payment processes, onboarding 1,100+ MBO partners in record 2 months. Built dashboards for 900+ COCO stores to improve sales process visibility.</p>
       </div>
     ),
     skills: ["Program Management", "Network Expansion", "Operational Transformation", "GTM Strategy"],
+    link: "/ola"
+  },
+  {
+    title: "Program Manager - GTM Strategy (International & Domestic)",
+    company: "Ola Electric Technologies",
+    location: "Bangalore, India",
+    period: "05/2021 - 06/2023",
+    description: (
+      <ul className="space-y-2 list-disc pl-4">
+        <li>Developed international GTM and market entry strategy across EU, ANZ, ASEAN, & SAARC regions.</li>
+        <li>Shortlisted 200+ cities across 15+ countries leveraging TAM/SAM & unit economics.</li>
+        <li>Launched industry-first D2C sales model, enabling ₹80Cr GMV in the first 2 months across 3,600+ pin codes.</li>
+        <li>Designed end-to-end operating model across digital, field ops, service, & CX support by building 25+ SOPs.</li>
+        <li>Slashed 10K+ ticket backlog by 50% within a week by syncing 5 workstreams and 300+ agents.</li>
+      </ul>
+    ),
+    skills: ["Market Entry", "International GTM", "D2C Sales", "SOP Design"],
     link: "/ola"
   }
 ];

@@ -7,12 +7,12 @@ const projects = [
     id: "gtm-strategy",
     title: "GTM Strategy & Sales",
     icon: TrendingUp,
-    description: "Created GTM strategy for Channel sales & Inverter Battery segment.",
+    description: "Owned GTM strategy & expansion for channel sales & inverter battery segment.",
     details: [
-      "Defined expansion playbooks leading to 4Cr+ sales per month.",
-      "Owned sales strategy & P&L for mobility accounts.",
-      "Managed IB vertical (6 SKUs) and led CFT across supply chain, production & sales.",
-      "Established channel sales structures across key regional clusters."
+      "Built entry playbook driving ₹4Cr+ monthly revenue.",
+      "Led P&L strategy for key mobility accounts, aligning supply chain, production, & sales to improve margins.",
+      "Built & scaled strategic partnerships with channel partners (₹20L+/month sales via financing support).",
+      "Led cross-functional cost optimization initiatives, reducing BOM costs by 5%."
     ]
   },
   {
@@ -22,21 +22,21 @@ const projects = [
     description: "Built battery financing ecosystem for 3W market to drive adoption.",
     details: [
       "Engaged 30+ NBFCs on specialized financing structures.",
-      "Partnered with BFL to grow secondary sales by ~12%.",
+      "Partnered with Bajaj Finance to increase secondary sales by ~12%.",
       "Reduced financial barriers for L3 segment customers.",
       "Developed credit assessment models for first-time EV buyers."
     ]
   },
   {
-    id: "bom-optimization",
-    title: "BOM Cost Optimization",
-    icon: Zap,
-    description: "Led cross-functional teams to optimize BOM costs by 5%.",
+    id: "partnerships",
+    title: "Strategic Partnerships",
+    icon: Battery,
+    description: "Built & scaled strategic partnerships with recyclers and channel partners.",
     details: [
-      "Drove cost efficiency through strategic sourcing and design optimization.",
-      "Enabled competitive pricing in key accounts and bulk deals.",
-      "Streamlined procurement processes with R&D and Supply Chain teams.",
-      "Identified alternative component suppliers to mitigate supply risks."
+      "Established ₹1Cr+ business through recycler partnerships.",
+      "Liaised with 5+ verticals to lay groundwork for new business expansion.",
+      "Improved pricing competitiveness in enterprise deals through strategic alliances.",
+      "Managed IB vertical (6 SKUs) and led CFT across supply chain, production & sales."
     ]
   }
 ];

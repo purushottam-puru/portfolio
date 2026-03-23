@@ -25,7 +25,8 @@ export default function Education() {
                 </div>
                 <div>
                   <h4 className="text-xl md:text-2xl font-bold text-zinc-900 mb-1">Master of Business Administration</h4>
-                  <p className="text-zinc-500 font-semibold mb-3 text-sm md:text-base">Indian Institute of Management Bangalore | IIMB</p>
+                  <p className="text-zinc-500 font-semibold mb-1 text-sm md:text-base">Indian Institute of Management Bangalore | IIMB</p>
+                  <p className="text-emerald-600 font-bold text-xs md:text-sm mb-3 uppercase tracking-wider">06/2019 - 04/2021</p>
                   <div className="space-y-4">
                     <p className="text-zinc-600 text-sm md:text-base leading-relaxed">
                       Specialized in <span className="text-emerald-600 font-bold">Strategy and Operations</span>. This degree fundamentally shifted my approach from purely execution-focused to strategic decision-making, leveraging data-driven frameworks to solve complex business problems.
@@ -56,8 +57,9 @@ export default function Education() {
                 </div>
                 <div>
                   <h4 className="text-xl md:text-2xl font-bold text-zinc-900 mb-1">Bachelor of Mass Communication</h4>
-                  <p className="text-zinc-500 font-semibold mb-2 text-sm md:text-base">L. S. College, Muzaffarpur</p>
-                  <p className="text-zinc-600 text-xs md:text-sm">Class of 2019. Foundational degree in mass communication.</p>
+                  <p className="text-zinc-500 font-semibold mb-1 text-sm md:text-base">L. S. College, Muzaffarpur</p>
+                  <p className="text-emerald-600 font-bold text-xs md:text-sm mb-2 uppercase tracking-wider">07/2015 - 04/2019</p>
+                  <p className="text-zinc-600 text-xs md:text-sm">Foundational degree in mass communication.</p>
                 </div>
               </div>
             </div>
