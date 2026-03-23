@@ -13,19 +13,27 @@ export default function Contact() {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
+    // Add Formspree specific fields
+    const formspreeData = {
+      ...data,
+      _subject: `New Message from ${data.name}: ${data.subject}`,
+      _replyto: data.email
+    };
+
     try {
-      // 1. Save to local database via our new API
-      await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      }).catch(err => console.error("Local API error:", err));
+      // 1. Save to local database (ONLY if running in AI Studio dev environment)
+      if (window.location.hostname.includes("run.app") || window.location.hostname.includes("localhost")) {
+        await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        }).catch(err => console.error("Local API error:", err));
+      }
 
       // 2. Send via Formspree for email notification
-      // Destination email: purushottam.puru01@gmail.com
       const response = await fetch("https://formspree.io/purushottam.puru01@gmail.com", {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify(formspreeData),
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
