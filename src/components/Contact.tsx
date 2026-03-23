@@ -7,54 +7,33 @@ export default function Contact() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    // We don't call e.preventDefault() here because we want the standard form submission to happen
+    // to the hidden iframe.
     setStatus("submitting");
     
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
-    // Prepare data for Formspree
-    const formspreeData = new FormData(e.currentTarget);
-    formspreeData.append("_subject", `New Message from ${data.name}: ${data.subject}`);
-
-    try {
-      // 1. Save to local database (ONLY if running in AI Studio dev environment)
-      if (window.location.hostname.includes("run.app") || window.location.hostname.includes("localhost")) {
-        fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        }).catch(err => console.error("Local API error:", err));
-      }
-
-      // 2. Send via Formspree for email notification
-      const formspreeUrl = "https://formspree.io/f/purushottam.puru01@gmail.com";
-      console.log("Submitting to Formspree (Final Fix):", formspreeUrl);
-      
-      const response = await fetch(formspreeUrl, {
+    // 1. Save to local database (ONLY if running in AI Studio dev environment)
+    if (window.location.hostname.includes("run.app") || window.location.hostname.includes("localhost")) {
+      fetch("/api/contact", {
         method: "POST",
-        body: formspreeData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        setStatus("success");
-        (e.target as HTMLFormElement).reset();
-      } else {
-        const result = await response.json();
-        setErrorMessage(result.error || "Formspree error. Please check your email for a confirmation link from them.");
-        setStatus("error");
-      }
-    } catch (error) {
-      setErrorMessage("Network error. Please try again.");
-      setStatus("error");
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }).catch(err => console.error("Local API error:", err));
     }
+
+    // We show success after a short delay because we can't detect iframe load across domains
+    setTimeout(() => {
+      setStatus("success");
+    }, 1500);
   };
 
   return (
     <section id="contact" className="py-20 md:py-32 px-6">
+      {/* Hidden iframe to handle the form submission without redirecting */}
+      <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: 'none' }}></iframe>
+      
       <div className="max-w-7xl mx-auto">
         <div className="bg-emerald-600 rounded-[32px] md:rounded-[60px] p-8 md:p-24 text-white relative overflow-hidden">
           {/* Decorative elements */}
@@ -128,6 +107,9 @@ export default function Contact() {
                 </motion.div>
               ) : (
                 <form 
+                  action="https://docs.google.com/forms/d/e/1FAIpQLSf4DTBrc8l5jAp00r4ctYMB-YdPyeqsvOJs9Wm8m9Ck0mbgYQ/formResponse"
+                  method="POST"
+                  target="hidden_iframe"
                   onSubmit={handleSubmit} 
                   className="space-y-4 md:space-y-6"
                 >
@@ -136,7 +118,7 @@ export default function Contact() {
                       <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Name</label>
                       <input 
                         required
-                        name="name"
+                        name="entry.477495519"
                         type="text" 
                         className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all text-sm md:text-base" 
                         placeholder="John Doe" 
@@ -146,7 +128,7 @@ export default function Contact() {
                       <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Email</label>
                       <input 
                         required
-                        name="email"
+                        name="entry.621149694"
                         type="email" 
                         className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all text-sm md:text-base" 
                         placeholder="john@example.com" 
@@ -157,7 +139,7 @@ export default function Contact() {
                     <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Subject</label>
                     <input 
                       required
-                      name="subject"
+                      name="entry.376637569"
                       type="text" 
                       className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all text-sm md:text-base" 
                       placeholder="Strategic Partnership" 
@@ -167,7 +149,7 @@ export default function Contact() {
                     <label className="text-[10px] md:text-sm font-bold text-zinc-900 uppercase tracking-wider">Message</label>
                     <textarea 
                       required
-                      name="message"
+                      name="entry.1271449414"
                       rows={4} 
                       className="w-full px-5 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-zinc-50 border border-zinc-100 text-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all resize-none text-sm md:text-base" 
                       placeholder="Tell me about your project..."
