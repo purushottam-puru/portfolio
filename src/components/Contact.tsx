@@ -7,35 +7,54 @@ export default function Contact() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    // We don't call e.preventDefault() here because we want the standard form submission to happen
-    // But we want to show the success state immediately
+    e.preventDefault();
     setStatus("submitting");
     
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
-    // 1. Save to local database (ONLY if running in AI Studio dev environment)
-    if (window.location.hostname.includes("run.app") || window.location.hostname.includes("localhost")) {
-      fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      }).catch(err => console.error("Local API error:", err));
-    }
+    // Prepare data for Formspree
+    const formspreeData = new FormData(e.currentTarget);
+    formspreeData.append("_subject", `New Message from ${data.name}: ${data.subject}`);
 
-    // We set a timeout to show success because we can't easily detect iframe load across domains
-    setTimeout(() => {
-      setStatus("success");
-      // Note: we don't reset the form here manually because the standard submission might still be in flight
-      // but the success UI will hide the form anyway.
-    }, 1500);
+    try {
+      // 1. Save to local database (ONLY if running in AI Studio dev environment)
+      if (window.location.hostname.includes("run.app") || window.location.hostname.includes("localhost")) {
+        fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        }).catch(err => console.error("Local API error:", err));
+      }
+
+      // 2. Send via Formspree for email notification
+      const formspreeUrl = "https://formspree.io/f/purushottam.puru01@gmail.com";
+      console.log("Submitting to Formspree (Final Fix):", formspreeUrl);
+      
+      const response = await fetch(formspreeUrl, {
+        method: "POST",
+        body: formspreeData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        const result = await response.json();
+        setErrorMessage(result.error || "Formspree error. Please check your email for a confirmation link from them.");
+        setStatus("error");
+      }
+    } catch (error) {
+      setErrorMessage("Network error. Please try again.");
+      setStatus("error");
+    }
   };
 
   return (
     <section id="contact" className="py-20 md:py-32 px-6">
-      {/* Hidden iframe to handle the form submission without redirecting */}
-      <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: 'none' }}></iframe>
-      
       <div className="max-w-7xl mx-auto">
         <div className="bg-emerald-600 rounded-[32px] md:rounded-[60px] p-8 md:p-24 text-white relative overflow-hidden">
           {/* Decorative elements */}
@@ -109,9 +128,6 @@ export default function Contact() {
                 </motion.div>
               ) : (
                 <form 
-                  action="https://formspree.io/purushottam.puru01@gmail.com"
-                  method="POST"
-                  target="hidden_iframe"
                   onSubmit={handleSubmit} 
                   className="space-y-4 md:space-y-6"
                 >
