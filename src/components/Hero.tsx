@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -23,13 +24,13 @@ export default function Hero() {
             Strategy & Operations leader in the EV ecosystem with experience across OEM, charging infrastructure, and battery manufacturing. IIM Bangalore MBA with a proven track record of leading 0→1 and scale initiatives, including 4,000+ store rollouts and nationwide charging deployments.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a 
-              href="#experience"
+            <Link 
+              to={{ pathname: "/", hash: "#experience" }}
               className="w-full sm:w-auto bg-emerald-600 text-white px-8 py-4 rounded-2xl font-semibold flex items-center justify-center gap-2 hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-200 group"
             >
               View Experience
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
             <div className="flex items-center gap-4">
               <a 
                 href="https://www.linkedin.com/in/purushottam-puru/" 

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowLeft, Zap, Battery, TrendingUp, Handshake } from "lucide-react";
+import { ArrowLeft, Zap, Battery, TrendingUp, Handshake, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const projects = [
@@ -112,26 +112,40 @@ export default function Geon() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-zinc-900 rounded-[40px] md:rounded-[60px] p-8 md:p-20 text-white relative overflow-hidden"
+        className="bg-zinc-900 rounded-[40px] md:rounded-[60px] p-8 md:p-24 text-white relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2"></div>
+        
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-sm font-bold text-emerald-400 uppercase tracking-widest mb-8 md:mb-12">Manager Recommendation</h2>
-          <blockquote className="text-xl md:text-3xl font-medium leading-relaxed mb-10 md:mb-12 italic text-zinc-200">
+          <div className="w-16 h-16 md:w-20 md:h-20 bg-emerald-500/20 rounded-3xl flex items-center justify-center text-emerald-400 mb-10 md:mb-14">
+            <Quote className="w-8 h-8 md:w-10 md:h-10 fill-current" />
+          </div>
+          
+          <h2 className="text-sm font-bold text-emerald-400 uppercase tracking-[0.2em] mb-8 md:mb-12">Manager Recommendation</h2>
+          
+          <blockquote className="text-2xl md:text-4xl font-medium leading-[1.4] md:leading-[1.4] mb-12 md:mb-16 italic text-zinc-100 tracking-tight">
             "{recommendation.text}"
           </blockquote>
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-8 border-t border-zinc-800">
-            <div>
-              <div className="text-lg md:text-xl font-bold text-white">{recommendation.author}</div>
-              <div className="text-sm md:text-base text-zinc-400">{recommendation.title}</div>
+          
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 pt-10 border-t border-white/10">
+            <div className="flex items-center gap-5">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-xl md:text-2xl">
+                {recommendation.author.split(' ').map(n => n[0]).join('')}
+              </div>
+              <div>
+                <div className="text-xl md:text-2xl font-bold text-white tracking-tight">{recommendation.author}</div>
+                <div className="text-sm md:text-base text-zinc-400 font-medium">{recommendation.title}</div>
+              </div>
             </div>
             <a 
               href={recommendation.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-emerald-400 font-bold hover:text-emerald-300 transition-colors"
+              className="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-2xl font-bold transition-all border border-white/10 hover:border-white/20 group"
             >
               View on LinkedIn
+              <ArrowLeft className="w-4 h-4 rotate-180 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
