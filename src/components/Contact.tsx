@@ -31,8 +31,8 @@ export default function Contact() {
       }
 
       // 2. Send via Formspree for email notification
-      const formspreeUrl = "https://formspree.io/f/purushottam.puru01@gmail.com";
-      console.log("Submitting to Formspree (v3):", formspreeUrl);
+      const formspreeUrl = "https://formspree.io/purushottam.puru01@gmail.com";
+      console.log("Submitting to Formspree (Final Attempt):", formspreeUrl);
       
       const response = await fetch(formspreeUrl, {
         method: "POST",
@@ -48,15 +48,11 @@ export default function Contact() {
         (e.target as HTMLFormElement).reset();
       } else {
         const result = await response.json();
-        if (result.error && result.error.includes("not set up")) {
-          setErrorMessage("Formspree needs confirmation. Please check purushottam.puru01@gmail.com for a confirmation email from Formspree and click 'Confirm'.");
-        } else {
-          setErrorMessage(result.error || "Something went wrong. Please try again.");
-        }
+        setErrorMessage(result.error || "Something went wrong. Please try again.");
         setStatus("error");
       }
     } catch (error) {
-      setErrorMessage("Failed to connect to the server. Your message was saved locally, but email notification failed.");
+      setErrorMessage("Failed to send message. Please try again later.");
       setStatus("error");
     }
   };
@@ -120,11 +116,11 @@ export default function Contact() {
                   <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-6">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
-                  <h4 className="text-2xl font-bold text-zinc-900 mb-4">Message Received!</h4>
-                  <p className="text-zinc-600 mb-4">Your message has been saved locally.</p>
+                  <h4 className="text-2xl font-bold text-zinc-900 mb-4">Message Sent!</h4>
+                  <p className="text-zinc-600 mb-4">Your message has been successfully sent. I'll get back to you soon.</p>
                   <div className="bg-emerald-50 p-6 rounded-2xl border border-emerald-100 mb-8 max-w-md">
-                    <p className="text-emerald-800 text-sm font-medium leading-relaxed">
-                      <strong>Important:</strong> To receive email notifications, please check your inbox (<strong>purushottam.puru01@gmail.com</strong>) for a confirmation email from Formspree and click "Confirm".
+                    <p className="text-emerald-800 text-sm font-medium leading-relaxed text-center">
+                      Thank you for reaching out!
                     </p>
                   </div>
                   <button 
