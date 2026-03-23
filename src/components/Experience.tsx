@@ -34,11 +34,6 @@ const fullTime = [
           <li>Led deployment strategy for 4K+ fast chargers nationwide for fleet business.</li>
           <li>Developed real-time dashboards tracking utilization, uptime, & operational metrics.</li>
         </ul>
-        <p className="text-sm">
-          <Link to="/capacity" className="inline-flex items-center gap-1 text-emerald-600 font-bold hover:underline">
-            [View Staffing Model Project]
-          </Link>
-        </p>
       </div>
     ),
     skills: ["Program Management", "Network Expansion", "Operational Transformation", "GTM Strategy"],
@@ -55,7 +50,12 @@ const fullTime = [
         <li>Shortlisted 200+ cities across 15+ countries leveraging TAM/SAM & unit economics.</li>
         <li>Launched industry-first D2C sales model, enabling ₹80Cr GMV in the first 2 months across 3,600+ pin codes.</li>
         <li>Designed end-to-end operating model across digital, field ops, service, & CX support by building 25+ SOPs.</li>
-        <li>Slashed 10K+ ticket backlog by 50% within a week by syncing 5 workstreams and 300+ agents.</li>
+        <li>
+          Slashed 10K+ ticket backlog by 50% within a week by syncing 5 workstreams and 300+ agents.{" "}
+          <Link to="/capacity" className="text-emerald-600 font-bold hover:underline">
+            [View Capacity Planner]
+          </Link>
+        </li>
       </ul>
     ),
     skills: ["Market Entry", "International GTM", "D2C Sales", "SOP Design"],

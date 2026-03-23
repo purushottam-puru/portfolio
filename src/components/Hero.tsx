@@ -33,14 +33,6 @@ export default function Hero() {
             </Link>
             <div className="flex items-center gap-4">
               <a 
-                href="#" 
-                className="flex items-center gap-2 px-6 py-4 rounded-2xl border border-zinc-200 text-zinc-600 font-semibold hover:bg-zinc-50 hover:border-zinc-300 transition-all"
-                title="Download Resume"
-              >
-                <FileText className="w-5 h-5" />
-                Resume
-              </a>
-              <a 
                 href="https://www.linkedin.com/in/purushottam-puru/" 
                 target="_blank"
                 rel="noopener noreferrer"

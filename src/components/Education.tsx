@@ -31,22 +31,6 @@ export default function Education() {
                     <p className="text-zinc-600 text-sm md:text-base leading-relaxed">
                       Specialized in <span className="text-emerald-600 font-bold">Strategy and Operations</span>. This degree fundamentally shifted my approach from purely execution-focused to strategic decision-making, leveraging data-driven frameworks to solve complex business problems.
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-100">
-                        <h5 className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Key Projects</h5>
-                        <ul className="text-xs md:text-sm text-zinc-600 space-y-1">
-                          <li>• Supply Chain Optimization for E-commerce</li>
-                          <li>• Market Entry Strategy for Fintech</li>
-                        </ul>
-                      </div>
-                      <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-100">
-                        <h5 className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Achievements</h5>
-                        <ul className="text-xs md:text-sm text-zinc-600 space-y-1">
-                          <li>• Top 10% in Operations Management</li>
-                          <li>• Case Study Competition Finalist</li>
-                        </ul>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
