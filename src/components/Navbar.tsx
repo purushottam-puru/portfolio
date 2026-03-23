@@ -31,7 +31,7 @@ export default function Navbar() {
           {navItems.map((item) => (
             <Link 
               key={item} 
-              to={isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
+              to={{ pathname: "/", hash: `#${item.toLowerCase()}` }}
               className="text-sm font-medium text-zinc-600 hover:text-emerald-600 transition-colors"
             >
               {item}
@@ -76,7 +76,7 @@ export default function Navbar() {
               {navItems.map((item) => (
                 <Link 
                   key={item} 
-                  to={isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
+                  to={{ pathname: "/", hash: `#${item.toLowerCase()}` }}
                   className="text-lg font-bold text-zinc-900"
                 >
                   {item}
