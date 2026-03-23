@@ -14,13 +14,11 @@ export default function Contact() {
     const data = Object.fromEntries(formData.entries());
 
     // Prepare data for Formspree
-    const formspreeData = new FormData();
-    formspreeData.append("name", String(data.name));
-    formspreeData.append("email", String(data.email));
-    formspreeData.append("subject", String(data.subject));
-    formspreeData.append("message", String(data.message));
-    formspreeData.append("_subject", `New Message from ${data.name}: ${data.subject}`);
-    formspreeData.append("_replyto", String(data.email));
+    const formspreeData = {
+      ...data,
+      _subject: `New Message from ${data.name}: ${data.subject}`,
+      _replyto: data.email
+    };
 
     try {
       // 1. Save to local database (ONLY if running in AI Studio dev environment)
@@ -33,13 +31,14 @@ export default function Contact() {
       }
 
       // 2. Send via Formspree for email notification
-      const formspreeUrl = "https://formspree.io/purushottam.puru01@gmail.com";
-      console.log("Submitting to Formspree (v2):", formspreeUrl);
+      const formspreeUrl = "https://formspree.io/f/purushottam.puru01@gmail.com";
+      console.log("Submitting to Formspree (v3):", formspreeUrl);
       
       const response = await fetch(formspreeUrl, {
         method: "POST",
-        body: formspreeData,
+        body: JSON.stringify(formspreeData),
         headers: {
+          'Content-Type': 'application/json',
           'Accept': 'application/json'
         }
       });
