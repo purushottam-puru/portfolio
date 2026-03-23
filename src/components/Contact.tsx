@@ -23,7 +23,7 @@ export default function Contact() {
 
       // 2. Send via Formspree for email notification
       // Destination email: purushottam.puru01@gmail.com
-      const response = await fetch("https://formspree.io/f/purushottam.puru01@gmail.com", {
+      const response = await fetch("https://formspree.io/purushottam.puru01@gmail.com", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
